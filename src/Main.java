@@ -22,17 +22,17 @@ public class Main {
         System.out.println("The wallpaper width is " + wallpaperWidth + " meters");
 
         System.out.println("Enter the wallpaper length of the room in meters");
-        double wallpaperLenght = scanner.nextDouble();
-        System.out.println("The wallpaper length is " + wallpaperLenght + " meters");
+        double wallpaperLength = scanner.nextDouble();
+        System.out.println("The wallpaper length is " + wallpaperLength + " meters");
 
         double perimeter = (length + width) * 2;
-        double cloth = perimeter / wallpaperWidth; //number of strips of wallpaper
-        int maxCloth = (int)Math.ceil(cloth); //rounded value up
+        double stripsOfWallpaper = perimeter / wallpaperWidth; //number of strips of wallpaper
+        int roundedStripsOfWallpaper = (int)Math.ceil(stripsOfWallpaper); //rounded value up
 
-        double reserve = 0.1; //room height reserve
-        int clothInRoll = (int) (wallpaperLenght / (height + reserve)); //number of whole strips in roll
+        double HeightReserve = 0.1; //room height reserve
+        int numberOfStrips = (int) (wallpaperLength / (height + HeightReserve)); //number of whole strips in roll
 
-        int result = maxCloth / clothInRoll;
+        int result = roundedStripsOfWallpaper / numberOfStrips;
         System.out.println("You will need is " + result + " wallpaper rolls");
         scanner.close();
 
